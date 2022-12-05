@@ -8,6 +8,7 @@ namespace Dealership
   {
     public static void Main()
     {
+      //create car instances
       Car nissan = new Car("2004 Murano", 24000, 100000);
       Car honda = new Car("2017 Accord", 27000, 50);
       Car mercedes = new Car("2020 GLE SUV", 56000, 123);
@@ -18,6 +19,10 @@ namespace Dealership
       string stringMaxPrice = Console.ReadLine();
       int maxPrice = int.Parse(stringMaxPrice);
 
+      //set price
+      honda.SetPrice(24000);
+
+      // list cars within budget
       List<Car> CarsWithinBudget = new List<Car>(0);
 
       foreach (Car automobile in Cars)
@@ -28,9 +33,11 @@ namespace Dealership
         }
       }
 
+      // display cars within budget
       for (int i = 0; i < CarsWithinBudget.Count; i++)
       {
-        Console.WriteLine($"{CarsWithinBudget[i].MakeModel}: ${CarsWithinBudget[i].Price}");
+        Console.WriteLine("----------------------");
+        Console.WriteLine($"{CarsWithinBudget[i].GetMakeModel()} with {CarsWithinBudget[i].GetMiles()} miles: ${CarsWithinBudget[i].GetPrice()}.");
       }
     }
   }
