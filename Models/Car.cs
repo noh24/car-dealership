@@ -12,6 +12,10 @@ namespace Dealership.Models
       _price = price;
       _miles = miles;
     }
+    public static string MakeSound(string sound)
+    {
+      return $"Our cars sound like {sound}";
+    }
     // getter method
     public string GetMakeModel()
     {

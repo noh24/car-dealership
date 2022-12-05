@@ -13,9 +13,12 @@ namespace Dealership
       Car honda = new Car("2017 Accord", 27000, 50);
       Car mercedes = new Car("2020 GLE SUV", 56000, 123);
 
+      // tell them what the car sounds like
+      Console.WriteLine(Car.MakeSound("zroooom"));
+
       List<Car> Cars = new List<Car>() { nissan, honda, mercedes };
 
-      Console.WriteLine("Enter maximum price: ");
+      Console.WriteLine("What is your budget? ");
       string stringMaxPrice = Console.ReadLine();
       int maxPrice = int.Parse(stringMaxPrice);
 
