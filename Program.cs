@@ -13,6 +13,11 @@ namespace Dealership
       Car honda = new Car("2017 Accord", 27000, 50);
       Car mercedes = new Car("2020 GLE SUV", 56000, 123);
 
+      //call property
+      Console.WriteLine(honda.MakeModel);
+      honda.MakeModel = "2021 Civic Hatchback";
+      Console.WriteLine(honda.MakeModel);
+
       // tell them what the car sounds like
       Console.WriteLine(Car.MakeSound("zroooom"));
 
@@ -23,7 +28,7 @@ namespace Dealership
       int maxPrice = int.Parse(stringMaxPrice);
 
       //set price
-      honda.SetPrice(24000);
+      // honda.SetPrice(24000);
 
       // list cars within budget
       List<Car> CarsWithinBudget = new List<Car>(0);
@@ -40,7 +45,7 @@ namespace Dealership
       for (int i = 0; i < CarsWithinBudget.Count; i++)
       {
         Console.WriteLine("----------------------");
-        Console.WriteLine($"{CarsWithinBudget[i].GetMakeModel()} with {CarsWithinBudget[i].GetMiles()} miles: ${CarsWithinBudget[i].GetPrice()}.");
+        Console.WriteLine($"{CarsWithinBudget[i].MakeModel} with {CarsWithinBudget[i].Miles} miles: ${CarsWithinBudget[i].Price}.");
       }
     }
   }
