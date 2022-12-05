@@ -6,7 +6,13 @@ public class Car
   public string MakeModel;
   public int Price;
   public int Miles;
-  
+  //constructor
+  public Car(string makeModel, int price, int miles)
+  {
+    MakeModel = makeModel;
+    Price = price;
+    Miles = miles;
+  }
   public bool WorthBuying(int maxPrice)
   {
     return (Price <= maxPrice);
@@ -17,20 +23,9 @@ public class Program
 {
   public static void Main()
   {
-    Car nissan = new Car();
-    nissan.MakeModel = "2004 Murano";
-    nissan.Price = 24000;
-    nissan.Miles = 100000;
-
-    Car honda = new Car();
-    honda.MakeModel = "2017 Accord";
-    honda.Price = 27000;
-    honda.Miles = 50;
-
-    Car mercedes = new Car();
-    mercedes.MakeModel = "2020 GLE SUV";
-    mercedes.Price = 56000;
-    mercedes.Miles = 123;
+    Car nissan = new Car("2004 Murano", 24000, 100000);
+    Car honda = new Car("2017 Accord", 27000, 50);
+    Car mercedes = new Car("2020 GLE SUV", 56000, 123);
 
     List<Car> Cars = new List<Car>() { nissan, honda, mercedes };
 
